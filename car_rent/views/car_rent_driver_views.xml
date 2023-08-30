@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-
     <record id="car_rent_driver_view_form" model="ir.ui.view">
         <field name="name">car.rent.driver.view.form</field>
         <field name="model">car.rent.driver</field>
@@ -8,12 +7,18 @@
             <form string="">
                 <sheet>
                     <group>
+                        <group>
                         <field name="name"/>
                         <field name="date_of_birth"/>
                         <field name="age"/>
                         <field name="driver_license_number" required="1"/>
                         <field name="driver_license_valid_thru"/>
-                        <field name="car_ids" widget='many2many_selection'/>
+                        </group>
+                        <notebook>
+                            <page  string="Cars">
+                                <field name="car_ids"/>                                       
+                            </page>
+                        </notebook>
                     </group>
                 </sheet>
             </form>
@@ -32,6 +37,7 @@
             </tree>
         </field>
     </record>
+    
     <record id="car_rent_driver_view_search" model="ir.ui.view">
         <field name="name">car.rent.driver.view.search</field>
         <field name="model">car.rent.driver</field>

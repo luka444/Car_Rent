@@ -14,7 +14,7 @@
                             <field name="model"/>
                             <field name="colors"/>
                             <field name="registration_plate"/>
-                            <field name="driver_id" options="{'no_create': True }"/>
+                            <field name="driver_id"/>
                             <field name="car_dealer"/>
                         </group>
                         <group>
