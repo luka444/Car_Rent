@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="car_rent_car_action" model="ir.actions.act_window">
+        <field name="name">Car Rent - Cars</field>
+        <field name="res_model">car.rent.car</field>
+        <field name="view_mode">tree,form,search</field>
+    </record>
+    
+    <record id="car_rent_driver_action" model="ir.actions.act_window">
+        <field name="name">Car Rent - Driver</field>
+        <field name="res_model">car.rent.driver</field>
+        <field name="view_mode">tree,form,search</field>
+    </record>
+
+    <record id="car_rent_tag_action" model="ir.actions.act_window">
+        <field name="name">Tags</field>
+        <field name="res_model">car.rent.tag</field>
+        <field name="view_mode">tree</field> 
+    </record>
+
+   <menuitem id="car_rent_menu_root" name="Car Rent">
+        <menuitem id="car_rent_menu" name="Rent">
+            <menuitem id="cars_menu" name="Cars" action="car_rent_car_action"/>
+            <menuitem id="drivers_menu" name="Drivers" action="car_rent_driver_action"/>
+        </menuitem>
+        <menuitem id='setting_menu' name="Settings">
+            <menuitem id="tags_menu" name="Tags" action="car_rent_tag_action"/>
+        </menuitem>
+
+   </menuitem>
+</odoo>
