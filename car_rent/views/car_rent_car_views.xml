@@ -12,7 +12,7 @@
                             <field  name="name" placeholder="Car Name"/>
                             <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color', 'no_create': True}"/>
                             <field name="model"/>
-                            <field name="colors"/>
+                            <field name="color"/>
                             <field name="registration_plate"/>
                             <field name="driver_id"/>
                             <field name="car_dealer"/>

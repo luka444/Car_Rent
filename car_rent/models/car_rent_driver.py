@@ -1,5 +1,5 @@
-from odoo import models, fields, api
 from datetime import datetime, date, timedelta
+from odoo import models, fields, api
 
 
 class CarRentDriver(models.Model):
@@ -13,8 +13,6 @@ class CarRentDriver(models.Model):
     driver_license_valid_thru = fields.Date(required=True)  
     car_ids = fields.Many2many('car.rent.car')
 
-#age >= 18
-#driver_license_valid_thru > date.today
     @api.depends('date_of_birth')
     def _compute_age(self):
         today = date.today()
@@ -25,7 +23,6 @@ class CarRentDriver(models.Model):
             else:
                 driver.age = 0
 
-  
     @api.constrains('age', 'driver_license_valid_thru')
     def _check_age_license_validity(self):
         for driver in self:
@@ -39,5 +36,3 @@ class CarRentDriver(models.Model):
             
             if driver.driver_license_valid_thru and driver.driver_license_valid_thru < min_valid_date:
                 raise models.ValidationError("Driver's license must be valid for at least 30 days.")
-        
-    

@@ -1,21 +1,31 @@
+import re
 from odoo import fields,models, api
 from odoo.exceptions import ValidationError
-import re
+
 
 class CarRentCar(models.Model):
     _name = 'car.rent.car'
     _description = 'Car Rent Car'
 
-    name = fields.Char(strinh="Name", required=True)
+    name = fields.Char(required=True)
     model = fields.Char()
     registration_plate = fields.Char()
     tag_ids = fields.Many2many('car.rent.tag')
     
-    colors = fields.Selection(
-        string='Car colors',
-        selection=[('black','Black'),('white','White'),('red','Red'),('blue', 'Blue'),('green', 'Green'),
-        ('silver', 'Silver'),('gray', 'Gray'),('orange', 'Orange'),('yellow', 'Yellow'),('purple', 'Purple'),
-        ('pink', 'Pink'),('brown', 'Brown')])
+    color = fields.Selection(
+        string='Car color',
+        selection=[('black','Black'),
+                   ('white','White'),
+                   ('red','Red'),
+                   ('blue', 'Blue'),
+                   ('green', 'Green'),
+                   ('silver', 'Silver'),
+                   ('gray', 'Gray'),
+                   ('orange', 'Orange'),
+                   ('yellow', 'Yellow'),
+                   ('purple', 'Purple'),
+                   ('pink', 'Pink'),
+                   ('brown', 'Brown')])
     
     image = fields.Image(string='Image')
     driver_id = fields.Many2one('car.rent.driver')
