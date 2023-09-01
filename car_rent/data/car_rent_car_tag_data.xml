@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="car_sedan" model="car.rent.tag">
+        <field name="name">Sedan</field>
+    </record>
+    
+    <record id="car_hatchback" model="car.rent.tag">
+        <field name="name">Hatchback</field>
+    </record>
+    
+    <record id="car_coupe" model="car.rent.tag">
+        <field name="name">Coupe</field>
+    </record>
+    
+</odoo>

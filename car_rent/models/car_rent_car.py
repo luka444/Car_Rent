@@ -27,9 +27,9 @@ class CarRentCar(models.Model):
                    ('pink', 'Pink'),
                    ('brown', 'Brown')])
     
-    image = fields.Image(string='Image')
+    car_img = fields.Image(string='Image')
     driver_id = fields.Many2one('car.rent.driver')
-    car_dealer = fields.Many2one('res.partner')
+    car_dealer_id = fields.Many2one('res.partner')
     _sql_constraints = [
         ('unique_name', 'unique(registration_plate)', 'Plate name must be unique!'),
     ]
@@ -38,7 +38,7 @@ class CarRentCar(models.Model):
     def _check_registration_plate(self):
         for car in self:
             if car.registration_plate and not self.georgian_registration_plate(car.registration_plate):
-                raise ValidationError("Invalid registration plate format for Georgian EU-style registration.")
+                raise ValidationError("Invalid registration plate format for Georgian EU-style registration. Example: EE-999-EE")
     
     def georgian_registration_plate(self,plate):
         georgian_plate = r'^[A-Z]{2}-[0-9]{3}-[A-Z]{2}$'

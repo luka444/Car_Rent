@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="Mercedes" model="car.rent.car">
+        <field name="name">Mercedes Benz</field>
+        <field name="model">W210</field>
+        <field name="color">silver</field>
+        <field name="registration_plate">SY-949-YS</field>
+    </record>
+    
+    <record id="Bmw" model="car.rent.car">
+        <field name="name">BMW</field>
+        <field name="model">E46</field>
+        <field name="color">black</field>
+        <field name="registration_plate">GD-123-PC</field>
+    </record>
+
+</odoo>
