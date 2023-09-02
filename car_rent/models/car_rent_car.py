@@ -30,8 +30,9 @@ class CarRentCar(models.Model):
     car_img = fields.Image(string='Image')
     driver_id = fields.Many2one('car.rent.driver')
     car_dealer_id = fields.Many2one('res.partner')
+    
     _sql_constraints = [
-        ('unique_name', 'unique(registration_plate)', 'Plate name must be unique!'),
+        ('unique_registration_plate', 'unique(registration_plate)', 'Plate name must be unique!'),
     ]
     
     @api.constrains('registration_plate')
@@ -43,7 +44,5 @@ class CarRentCar(models.Model):
     def georgian_registration_plate(self,plate):
         georgian_plate = r'^[A-Z]{2}-[0-9]{3}-[A-Z]{2}$'
         
-        if re.match(georgian_plate,plate):
-            return True
-        else:
-            return False
+        return  bool(re.match(georgian_plate,plate))
+      
