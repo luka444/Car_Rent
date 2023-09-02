@@ -8,10 +8,10 @@ class CarRentDriver(models.Model):
     
     name = fields.Char(required=True)
     date_of_birth = fields.Date()
-    age = fields.Integer(readonly=True,compute='_compute_age')
+    age = fields.Integer(compute='_compute_age')
     driver_license_number = fields.Char(required=True)
     driver_license_valid_thru = fields.Date(string="Driver's license term", required=True)  
-    car_ids = fields.Many2many('car.rent.car')
+    car_ids = fields.One2many('car.rent.car','driver_id')
 
     @api.depends('date_of_birth')
     def _compute_age(self):
