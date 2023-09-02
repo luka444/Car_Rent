@@ -13,4 +13,24 @@
         <field name="name">Coupe</field>
     </record>
     
+    <record id="car_luxury" model="car.rent.tag">
+        <field name="name">Luxury</field>
+    </record>
+    
+    <record id="car_minivan" model="car.rent.tag">
+        <field name="name">Minivan</field>
+    </record>
+    
+    <record id="car_wagon" model="car.rent.tag">
+        <field name="name">Wagon</field>
+    </record>
+    
+    <record id="car_pick_up" model="car.rent.tag">
+        <field name="name">Pickup Truck</field>
+    </record>
+    
+    <record id="car_off_road" model="car.rent.tag">
+        <field name="name">Off-Road</field>
+    </record>
+    
 </odoo>
