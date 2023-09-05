@@ -1,17 +1,19 @@
-<?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="Mercedes" model="car.rent.car">
-        <field name="name">Mercedes Benz</field>
-        <field name="model">W210</field>
-        <field name="color">silver</field>
-        <field name="registration_plate">SY-949-YS</field>
+    
+     <record id="car_max" model="car.rent.driver">
+        <field name="name">Max</field>
     </record>
+
     
     <record id="Bmw" model="car.rent.car">
         <field name="name">BMW</field>
         <field name="model">E46</field>
         <field name="color">black</field>
         <field name="registration_plate">GD-123-PC</field>
+        <field name="driver_id" ref="car_rent.car_max"/>
+        <field name="car_img" type="base64" file="car_rent/static/e46.jpg"/>
+        <field name="tag_ids" eval="[(6, 0, [ref('car_sedan')])]"/>
     </record>
 
 </odoo>
+
