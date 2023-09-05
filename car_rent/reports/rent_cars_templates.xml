@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- <template id="report_car_rent_cars">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+              <h2>Rent car</h2>
+            </t>
+        </t>        
+    </template> -->
+    
+    <template id="report_car">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <h1>Rental car</h1>
+                <div class="page">
+                    <h2>
+                        <span t-field="doc.name"/>
+                    </h2>
+                    <div>
+                        Car Type: <span t-field="doc.tag_ids" widget="many2many_tags"/>
+                    </div>
+                    <div>
+                        Car model: <span t-field="doc.model"/>
+                    </div>
+                    <div>
+                        Car color: <span t-field="doc.color"/>
+                    </div>
+                    <div>
+                        Registration Plate: <span t-field="doc.registration_plate"/>
+                    </div>
+                    <div>
+                        Driver: <span t-field="doc.driver_id"/>
+                    </div>
+                    <div>
+                        Car dealer: <span t-field="doc.car_dealer_id"/>
+                    </div>
+                    -------------------------------------------------------------------
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Date of Birth</th>
+                                <th>License Number</th>
+                                <th>license term</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-set="drivers" t-value="doc.mapped('driver_id')"/>
+                            <tr t-foreach="drivers" t-as="driver">
+                                <td>
+                                    <span t-field="driver.name"/> |
+                                </td>
+                                <td>
+                                    <span t-field="driver.date_of_birth"/> |
+                                </td>
+                                <td>
+                                    <span t-field="driver.driver_license_number"/> |
+                                </td>
+                                <td>
+                                    <span t-field="driver.driver_license_valid_thru"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                </table> 
+                -------------------------------------------------------------------        
+                </div>
+            </t>
+        </t>        
+    </template>
+
+</odoo>

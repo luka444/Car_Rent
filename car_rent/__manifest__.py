@@ -12,9 +12,11 @@
         'views/car_rent_tag_views.xml',
         'views/res_partner_views.xml',
         'views/car_rent_menus.xml',
+        'reports/car_rent_car_report.xml',
+        'reports/rent_cars_templates.xml',
         
     ],
-    'icon': 'static/description/icon_image.png',
+    'icon': 'car_rent/static/icon_image.png',
     'installable': True,
     'application': True,
 }

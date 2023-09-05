@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <report
+        id="report_car_rent_car"
+        model="car.rent.car"
+        string="Car Rental Report"
+        report_type="qweb-pdf"
+        name="car_rent.report_car"
+        file="car_rent.report_car"/>
+
+</odoo>
