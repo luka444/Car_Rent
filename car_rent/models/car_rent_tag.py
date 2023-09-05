@@ -7,6 +7,7 @@ class CarRentTag(models.Model):
 
     name = fields.Char(string="Tags", required=True)
     color = fields.Integer(string="Tag Color")
+    
     _sql_constraints = [
         ('unique_name', 'unique(name)', 'Tag name must be unique!'),
     ]
