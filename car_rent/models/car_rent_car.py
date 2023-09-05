@@ -27,7 +27,7 @@ class CarRentCar(models.Model):
                    ('pink', 'Pink'),
                    ('brown', 'Brown')])
     
-    car_img = fields.Image(string='Image')
+    car_img = fields.Image(string='Image', max_width=590, max_height=590)
     driver_id = fields.Many2one('car.rent.driver')
     car_dealer_id = fields.Many2one('res.partner')
     
@@ -45,4 +45,3 @@ class CarRentCar(models.Model):
         georgian_plate = r'^[A-Z]{2}-[0-9]{3}-[A-Z]{2}$'
         
         return  bool(re.match(georgian_plate,plate))
-      

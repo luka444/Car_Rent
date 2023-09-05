@@ -67,13 +67,16 @@
                                 </strong>
                             </div>
                             <div>
-                                Model: <field name="model"/>
+                                Car Model: <field name="model"/>
                             </div>
                             <div>
-                                Plate: <field name="registration_plate"/>
+                                Registration Plate: <field name="registration_plate"/>
                             </div>
                             <div>
-                                <field name="tag_ids" options="{'color_field': 'color'}"/>
+                                 <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                            </div>
+                            <div>
+                                Car Color: <strong><field name="color"/></strong>
                             </div>
                         </div>
                     </t>
