@@ -1,6 +1,6 @@
 <odoo>
     
-     <record id="car_max" model="car.rent.driver">
+    <record id="car_max" model="car.rent.driver">
         <field name="name">Max</field>
     </record>
 

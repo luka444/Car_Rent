@@ -73,7 +73,7 @@
                                 Registration Plate: <field name="registration_plate"/>
                             </div>
                             <div>
-                                 <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                                 <field name="tag_ids" widget="many2many_tags"/>
                             </div>
                             <div>
                                 Car Color: <strong><field name="color"/></strong>

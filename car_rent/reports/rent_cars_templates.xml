@@ -9,63 +9,67 @@
     </template> -->
     
     <template id="report_car">
-        <t t-call="web.html_container">
             <t t-foreach="docs" t-as="doc">
-                <h1>Rental car</h1>
-                <div class="page">
-                    <h2>
-                        <span t-field="doc.name"/>
-                    </h2>
-                    <div>
-                        Car Type: <span t-field="doc.tag_ids" widget="many2many_tags"/>
-                    </div>
-                    <div>
-                        Car model: <span t-field="doc.model"/>
-                    </div>
-                    <div>
-                        Car color: <span t-field="doc.color"/>
-                    </div>
-                    <div>
-                        Registration Plate: <span t-field="doc.registration_plate"/>
-                    </div>
-                    <div>
-                        Driver: <span t-field="doc.driver_id"/>
-                    </div>
-                    <div>
-                        Car dealer: <span t-field="doc.car_dealer_id"/>
-                    </div>
-                    -------------------------------------------------------------------
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Date of Birth</th>
-                                <th>License Number</th>
-                                <th>license term</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <t t-set="drivers" t-value="doc.mapped('driver_id')"/>
-                            <tr t-foreach="drivers" t-as="driver">
-                                <td>
-                                    <span t-field="driver.name"/> |
-                                </td>
-                                <td>
-                                    <span t-field="driver.date_of_birth"/> |
-                                </td>
-                                <td>
-                                    <span t-field="driver.driver_license_number"/> |
-                                </td>
-                                <td>
-                                    <span t-field="driver.driver_license_valid_thru"/>
-                                </td>
-                            </tr>
-                        </tbody>
-                </table> 
-                -------------------------------------------------------------------        
-                </div>
-            </t>
-        </t>        
+                <t t-call="web.html_container">
+                    <t t-call="web.external_layout">
+                    
+                
+                    <div class="page">
+                        <h1>Rental car</h1>
+                        <h2>
+                            <span t-field="doc.name"/>
+                        </h2>
+                        <div>
+                            Car Type: <span t-field="doc.tag_ids" widget="many2many_tags"/>
+                        </div>
+                        <div>
+                            Car model: <span t-field="doc.model"/>
+                        </div>
+                        <div>
+                            Car color: <span t-field="doc.color"/>
+                        </div>
+                        <div>
+                            Registration Plate: <span t-field="doc.registration_plate"/>
+                        </div>
+                        <div>
+                            Driver: <span t-field="doc.driver_id"/>
+                        </div>
+                        <div>
+                            Car dealer: <span t-field="doc.car_dealer_id"/>
+                        </div>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Date of Birth</th>
+                                    <th>License Number</th>
+                                    <th>license term</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-set="drivers" t-value="doc.mapped('driver_id')"/>
+                                <tr t-foreach="drivers" t-as="driver">
+                                    <td>
+                                        <span t-field="driver.name"/> 
+                                    </td>
+                                    <td>
+                                        <span t-field="driver.date_of_birth"/> 
+                                    </td>
+                                    <td>
+                                        <span t-field="driver.driver_license_number"/> 
+                                    </td>
+                                    <td>
+                                        <span t-field="driver.driver_license_valid_thru"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div t-field="doc.car_img"
+                            t-options="{'widget':'image','img_style':'width:1500px;height:1500px;','width':1500,'height':1500}"
+                        />
+                    </div> 
+                    </t>
+                </t>
+            </t>       
     </template>
-
 </odoo>
