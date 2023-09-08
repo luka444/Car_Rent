@@ -1,7 +1,7 @@
 from odoo import fields, models
 
 
-class CarRentTag(models.Model):
+class CarCategory(models.Model):
     _name = 'car.category'
     _description = 'Car Category'
 
