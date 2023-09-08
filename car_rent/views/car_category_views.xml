@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="car_category_view_tree" model="ir.ui.view">
+        <field name="name">car.category.view.tree</field>
+        <field name="model">car.category</field>
+        <field name="arch" type="xml">
+            <tree editable='bottom'>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+</odoo>
