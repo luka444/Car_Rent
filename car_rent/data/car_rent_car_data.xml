@@ -1,7 +1,10 @@
 <odoo>
     
-    <record id="car_max" model="car.rent.driver">
+    <record id="driver_max" model="car.rent.driver">
         <field name="name">Max</field>
+    </record>
+    <record id="driver_luke" model="car.rent.driver">
+        <field name="name">Luke</field>
     </record>
 
     
@@ -10,10 +13,20 @@
         <field name="model">E46</field>
         <field name="color">black</field>
         <field name="registration_plate">GD-123-PC</field>
-        <field name="driver_id" ref="car_rent.car_max"/>
+        <field name="driver_id" ref="car_rent.driver_max"/>
         <field name="car_img" type="base64" file="car_rent/static/e46.jpg"/>
-        <field name="tag_ids" eval="[(6, 0, [ref('car_sedan')])]"/>
+        <!-- <field name="tag_ids" eval="[(6, 0, [ref('car_sedan')])]"/> -->
     </record>
+    
+    <record id="Mercedes_w210" model="car.rent.car">
+        <field name="name">Mercedes Benz</field>
+        <field name="model">W210</field>
+        <field name="color">silver</field>
+        <field name="registration_plate">SY-949-YS</field>
+        <field name="driver_id" ref="car_rent.driver_luke"/>
+        <field name="car_img" type="base64" file="car_rent/static/W210.jpg"/>
+    </record>
+
 
 </odoo>
 

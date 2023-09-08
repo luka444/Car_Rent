@@ -10,7 +10,8 @@ class CarRentCar(models.Model):
     name = fields.Char(required=True)
     model = fields.Char()
     registration_plate = fields.Char()
-    tag_ids = fields.Many2many('car.rent.tag')
+    category_id = fields.Many2one('car.category')
+    car_mark_id = fields.Many2one('car.mark')
     
     color = fields.Selection(
         string='Car color',

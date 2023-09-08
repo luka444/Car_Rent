@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <report
-        id="report_car_rent_car"
-        model="car.rent.car"
-        string="Car Rental Report"
-        report_type="qweb-pdf"
-        name="car_rent.report_car"
-        file="car_rent.report_car"/>
+    <record id="report_car_rent_car" model="ir.actions.report">
+        <field name="name">Car Rental Report</field>
+        <field name="model">car.rent.car</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">car_rent.report_car</field>
+        <field name="report_file">car_rent.report_car</field>
+    </record>
 
 </odoo>

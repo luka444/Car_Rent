@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <record id="car_sedan" model="car.rent.tag">
+    <!-- <record id="car_sedan" model="car.rent.tag">
         <field name="name">Sedan</field>
     </record>
     
@@ -31,6 +31,6 @@
     
     <record id="car_off_road" model="car.rent.tag">
         <field name="name">Off-Road</field>
-    </record>
+    </record> -->
     
 </odoo>

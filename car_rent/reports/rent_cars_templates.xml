@@ -20,7 +20,7 @@
                             <span t-field="doc.name"/>
                         </h2>
                         <div>
-                            Car Type: <span t-field="doc.tag_ids" widget="many2many_tags"/>
+                            Car Type: <span t-field="doc.category_id"/>
                         </div>
                         <div>
                             Car model: <span t-field="doc.model"/>
@@ -65,7 +65,7 @@
                             </tbody>
                         </table>
                         <div t-field="doc.car_img"
-                            t-options="{'widget':'image','img_style':'width:1500px;height:1500px;','width':1500,'height':1500}"
+                            t-options="{'widget':'image','img_style':'width:800px;height:680px;','width':800,'height':680}"
                         />
                     </div> 
                     </t>

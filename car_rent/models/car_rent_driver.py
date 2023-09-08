@@ -18,7 +18,7 @@ class CarRentDriver(models.Model):
         today = date.today()
         for driver in self:
             if driver.date_of_birth:
-                age = today.year - driver.date_of_birth.year
+                age = today.year - driver.year - ((today.month, today.day) < (driver.month, driver.day))
                 driver.age = age
             else:
                 driver.age = 0

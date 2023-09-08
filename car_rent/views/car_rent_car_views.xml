@@ -14,7 +14,8 @@
                     </div>
                    <group>
                         <group>
-                            <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color', 'no_create': True}" string='Type'/>
+                            <field name="car_mark_id" options="{'no_create': True}"  string='Mark'/>
+                            <field name="category_id" options="{'no_create': True}"  string='Category'/>
                             <field name="model"/>
                             <field name="color"/>
                             <field name="registration_plate"/>
@@ -73,7 +74,7 @@
                                 Registration Plate: <field name="registration_plate"/>
                             </div>
                             <div>
-                                 <field name="tag_ids" widget="many2many_tags"/>
+                                 <field name="category_id"/>
                             </div>
                             <div>
                                 Car Color: <strong><field name="color"/></strong>
